@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.curso.arbol.HelloController">
+
+    <!-- Área principal con el árbol dentro de un ScrollPane -->
+    <center>
+        <ScrollPane fx:id="scrollArbol" pannable="true" fitToWidth="true" fitToHeight="true">
+            <content>
+                <!-- Aquí se dibuja el árbol -->
+                <Pane fx:id="panelArbol" prefWidth="800" prefHeight="600" />
+            </content>
+        </ScrollPane>
+    </center>
+
+    <!-- Contenedor de botones abajo -->
+    <bottom>
+        <VBox alignment="CENTER" spacing="10" padding="15">
+            <HBox alignment="CENTER" spacing="10">
+                <TextField fx:id="txtValor" promptText="Ingrese valor"/>
+                <Button text="Agregar" onAction="#onAgregarClick"/>
+                <Button text="Eliminar" onAction="#onEliminarClick"/>
+                <Button text="Borrar Árbol" onAction="#onBorrarArbolClick"/>
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="10">
+                <Button text="Inorden" onAction="#onInordenClick"/>
+                <Button text="Preorden" onAction="#onPreordenClick"/>
+                <Button text="Postorden" onAction="#onPostordenClick"/>
+                <Button text="Amplitud" onAction="#onAmplitudClick"/>
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="10">
+                <Button text="¿Existe?" onAction="#onExisteClick"/>
+                <Button text="Nivel de..." onAction="#onNivelClick"/>
+                <Button text="Actualizar Info" onAction="#onActualizarInfoClick"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>
